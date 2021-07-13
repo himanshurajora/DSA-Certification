@@ -19,4 +19,10 @@
         - Time COmplexity of a computer program:  https://www.youtube.com/watch?v=V42FBiohc6c&list=PL2_aWCzGMAwI9HK8YPVBjElbLbI3ufctn 
         - Big O notation in 5 minutes https://www.youtube.com/watch?v=__vX2sjlpXU
         - Definition of Big O notation https://www.youtube.com/watch?v=i1F_Uu0bYCc
-        
+        - Skipping It for now
+        - skipping this too
+        - skipping everything in the theory
+    - Advace 
+        - Skipping Everything Here too
+
+2. Arrays 

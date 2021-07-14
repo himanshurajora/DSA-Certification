@@ -18,7 +18,7 @@ for (var i = 0; i < array.length; i++) {
 }
 
 // insert item into array
-function insert(arr, n, k, item) {
+function insert(arr: any[], n: number, k: number, item: any) {
     for (i = n - 1; i >= k; i--) {
         arr[i] = arr[i + 1];
     }
@@ -27,7 +27,7 @@ function insert(arr, n, k, item) {
 }
 
 // delete item from array
-function deleteItem(arr, n, k) {
+function deleteItem(arr: any[], n: number, k: number) {
     for (i = k; i < n; i++) {
         arr[i] = arr[i + 1];
     }
@@ -35,7 +35,7 @@ function deleteItem(arr, n, k) {
 }
 
 // sort array
-function sort(arr, n) {
+function sort(arr: any[], n: number) {
     for (i = 0; i < n; i++) {
         for (j = 0; j < n - 1; j++) {
             if (arr[j] > arr[j + 1]) {
@@ -48,7 +48,7 @@ function sort(arr, n) {
 }
 
 // search item in array
-function search(arr, n, item) {
+function search(arr: any[], n: number, item: any) {
     for (i = 0; i < n; i++) {
         if (arr[i] == item) {
             return i;
@@ -57,20 +57,44 @@ function search(arr, n, item) {
     return -1;
 }
 
-// Main
-function main() {
-    console.log(array);
-    insert(array, 10, 5, 100);
-    console.log(array);
-    deleteItem(array, 10, 5);
-    console.log(array);
-    sort(array, 10);
-    console.log(array);
-    console.log(search(array, 10, 100));
+// Binary Search Function
+function BinarySearch(arr: number[], key: number) {
+    var low = 0;
+    var high = arr.length - 1;
+
+    while(low <= high){
+        var mid = Math.floor((low + high)/2);
+        console.log(mid);
+        if(key === arr[mid]){
+            return mid;
+        }
+        else if (key < arr[mid]){
+            high = mid - 1;
+        }
+        else{
+            low = mid + 1;
+        }
+    }
+    return -1;
 }
 
-main();
-
-
-
-
+//Bubble sort
+function BubbleSort(arr: number[]) {
+    var swapped = true;
+    for (let i = arr.length - 1; i >= 0; i--) {
+        if(swapped){
+            swapped = false;
+            for (let j = 0; j < i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    var temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = temp;
+                    swapped = true;
+                }
+            }
+        }
+        else{
+            break;
+        }
+    }
+}

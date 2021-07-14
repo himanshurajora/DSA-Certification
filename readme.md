@@ -26,3 +26,6 @@
         - Skipping Everything Here too
 
 2. Arrays 
+    - Resources 
+        - Data structure array https://discuss.codechef.com/questions/87915/data-structure-tutorial-array
+        

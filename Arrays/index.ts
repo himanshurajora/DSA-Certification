@@ -99,3 +99,24 @@ function BubbleSort(arr: number[]) {
     }
 }
 
+function QuickSort(arr: number[]){
+    console.log(arr)
+    if(arr.length <= 1){
+        return arr
+    }
+
+    var pivot = arr[arr.length - 1];
+    var left:number[] = [], right :number[] = [];
+
+    for (let i = 0; i < arr.length -1; i++) {
+        if(arr[i] < pivot){
+            left.push(arr[i])
+        }
+        else{
+            right.push(arr[i])
+        }
+    }
+
+    return [...QuickSort(left), pivot, ...QuickSort(right)]
+
+}

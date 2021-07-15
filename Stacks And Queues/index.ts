@@ -15,19 +15,28 @@ class Stack implements IStack{
 }
 
 
-// queue    
-interface IQueue{
-    list: number[]
-    enqueue: (item:number) => void
-    dequeue: () => number
+
+interface IQueue<T> {
+    list: T[];
+    enque(value: T): void;
+    deque(): T | string;
 }
 
-class Queue implements IQueue{
-    list = []
-    enqueue (...items: number[]): void{
-        this.list = [...this.list, ...items]
+// priority queue class
+class Queue<T> implements IQueue<T> {
+    list: T[];
+    constructor() {
+        this.list = [];
     }
-    dequeue():number{
-        return this.list.shift()
+    enque(value: T): void {
+        this.list.push(value);
+    }
+    deque(): T | string{
+        if (this.list.length === 0) {
+            return "the queue is empty";
+        }
+        let result = this.list[0];
+        this.list.splice(0, 1);
+        return result;
     }
 }
